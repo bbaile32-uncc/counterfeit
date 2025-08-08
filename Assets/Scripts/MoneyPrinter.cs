@@ -24,6 +24,10 @@ public class MoneyPrinter : MonoBehaviour
     private bool hasCooling = false;
     private bool hasTierUpgrade = false;
 
+    public bool HasBatteryInstalled() => hasBattery;
+    public bool HasCoolingInstalled() => hasCooling;
+    public bool HasUpgradeInstalled() => hasTierUpgrade;
+
     private void OnCollisionEnter(Collision collision)
     {
         PrinterPart part = collision.gameObject.GetComponent<PrinterPart>();
@@ -37,13 +41,16 @@ public class MoneyPrinter : MonoBehaviour
                 case PartType.Battery:
                     battery += part.value;
                     hasBattery = true;
+                    FindFirstObjectByType<PartOrderingComputer>()?.CompleteTask("InstallBattery");
                     break;
                 case PartType.Cooling:
                     temperature -= part.value;
                     hasCooling = true;
+                    FindFirstObjectByType<PartOrderingComputer>()?.CompleteTask("InstallCooling");
                     break;
                 case PartType.TierUpgrade:
                     tier = part.tierToUpgradeTo;
+                    FindFirstObjectByType<PartOrderingComputer>()?.CompleteTask("InstallUpgrade");
                     hasTierUpgrade = true;
                     break;
             }
