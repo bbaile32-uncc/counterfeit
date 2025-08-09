@@ -136,18 +136,18 @@ public class FPSInputActions : MonoBehaviour
             }
 
             // Grab money
-            Money cash = hit.collider.GetComponent<Money>();
-            if (cash != null)
-            {
-                PlayerMoney playerMoney = FindFirstObjectByType<PlayerMoney>();
-                if (playerMoney != null)
-                {
-                    playerMoney.money += cash.value;
-                    Debug.Log($"Picked up ${cash.value}. Total: ${playerMoney.money}");
-                    Destroy(cash.gameObject);
-                }
-                return;
-            }
+            //Money cash = hit.collider.GetComponent<Money>();
+            //if (cash != null)
+            //{
+            //    PlayerMoney playerMoney = FindFirstObjectByType<PlayerMoney>();
+            //    if (playerMoney != null)
+            //    {
+            //        playerMoney.money += cash.value;
+            //        Debug.Log($"Picked up ${cash.value}. Total: ${playerMoney.money}");
+            //        Destroy(cash.gameObject);
+            //    }
+            //    return;
+            //}
 
 
 

@@ -7,6 +7,7 @@ using TMPro;
 public class PartOrderingComputer : MonoBehaviour
 {
     public MoneyPrinter moneyPrinter;
+    public MoneyCleaner moneyCleaner;
 
     [Header("UI")]
     public GameObject uiPanel;

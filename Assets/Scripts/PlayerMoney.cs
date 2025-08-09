@@ -4,7 +4,7 @@ using TMPro;
 public class PlayerMoney : MonoBehaviour
 {
     public float money = 500f;
-    public TextMeshProUGUI moneyText; // ✅ this goes inside the class
+    public TextMeshProUGUI moneyText; 
 
     public bool TrySpend(float cost)
     {
@@ -19,11 +19,11 @@ public class PlayerMoney : MonoBehaviour
         return false;
     }
 
-    void Update() // ✅ must include return type (void)
+    void Update() 
     {
         if (moneyText != null)
         {
-            moneyText.text = $"Money: ${money:F0}"; // ✅ missing semicolon
+            moneyText.text = $"Money: ${money:F0}"; 
         }
     }
 }
